@@ -1,3 +1,6 @@
+#ifndef CODEC_HPP
+#define CODEC_HPP
+
 namespace binser 
 {
 
@@ -6,7 +9,7 @@ class Codec {
   public:
   template <typename... types>
   void operator()(types&... args) {
-
+    (derived().process(args), ...);
   }
 
   protected:
@@ -16,3 +19,5 @@ class Codec {
 };
 
 }
+
+#endif // CODEC_HPP

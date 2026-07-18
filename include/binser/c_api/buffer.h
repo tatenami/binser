@@ -1,3 +1,6 @@
+#ifndef BUFFER_H
+#define BUFFER_H
+
 #include <stdint.h>
 #include <stddef.h>
 
@@ -14,3 +17,5 @@ void binser_buffer_init(
 );
 
 size_t binser_buffer_get_operatable_size(binser_buffer_t *buffer);
+
+#endif // BUFFER_H
