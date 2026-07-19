@@ -31,7 +31,6 @@ void codec(Codec& codec, std::string& str) {
     for (size_t i = 0; i < length; ++i) {
       str.push_back(static_cast<char>(buffer[i]));
     }
-    str.push_back('\0');
   }
 }
 

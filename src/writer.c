@@ -6,30 +6,27 @@ void binser_writer_init(binser_writer_t *writer, uint8_t *buf, size_t capacity) 
   binser_buffer_init(&(writer->buffer), buf, capacity);
 }
 
+void binser_writer_clear(binser_writer_t *writer) {
+  binser_buffer_clear(&(writer->buffer));
+}
+
+
 int binser_write(binser_writer_t *writer, uint8_t *buf, size_t size) {
   if (size == 0) {
-    printf("[writer] size is 0, nothing to write.\n");
     return 0;
   }
-
-  printf("[writer] buffer position: %zu (capacity: %zu)\n", writer->buffer.position, writer->buffer.capacity);
 
   size_t writable_size = binser_buffer_get_operatable_size(&(writer->buffer));
   if (writable_size < size) {
-    printf("[writer] Not enough space to write. writable_size: %zu, requested size: %zu\n", writable_size, size);
     return 0;
   }
-
-  printf("[writer] writable_size: %zu, size: %zu\n", writable_size, size);
 
   for (size_t i = 0; i < size; i++) {
     writer->buffer.buf[writer->buffer.position + i] = buf[i];
   }
 
   writer->buffer.position += size;
-
-  printf("[writer] buffer position: %zu (capacity: %zu)\n", writer->buffer.position, writer->buffer.capacity);
-
+  
   return size;
 }
 

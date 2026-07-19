@@ -8,6 +8,7 @@ typedef struct {
 } binser_writer_t;
 
 void binser_writer_init(binser_writer_t *writer, uint8_t *buf, size_t capacity);
+void binser_writer_clear(binser_writer_t *writer);
 int binser_write(binser_writer_t *writer, uint8_t *buf, size_t size);
 
 /* 基本型の書き込み関数 */

@@ -8,6 +8,7 @@ typedef struct {
 } binser_reader_t;
 
 void binser_reader_init(binser_reader_t *reader, uint8_t *buf, size_t capacity);
+void binser_reader_clear(binser_reader_t *reader);
 int binser_read(binser_reader_t *reader, uint8_t *buf, size_t size);
 
 /* 基本型の読み込み関数 */

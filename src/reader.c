@@ -5,30 +5,26 @@ void binser_reader_init(binser_reader_t *reader, uint8_t *buf, size_t capacity) 
   binser_buffer_init(&(reader->buffer), buf, capacity);
 }
 
+void binser_reader_clear(binser_reader_t *reader) {
+  binser_buffer_clear(&(reader->buffer));
+}
+
 int binser_read(binser_reader_t *reader, uint8_t *buf, size_t size) {
   if (size == 0) {
-    printf("[reader] size is 0, nothing to read.\n");
     return 0;
   }
-
-  printf("[reader] buffer position: %zu (capacity: %zu)\n", reader->buffer.position, reader->buffer.capacity);
 
   size_t readable_size = binser_buffer_get_operatable_size(&(reader->buffer));
   if (readable_size < size) {
-    printf("[reader] Not enough data to read. readable_size: %zu, requested size: %zu\n", readable_size, size);
     return 0;
   }
 
-  printf("[reader] readable_size: %zu, size: %zu\n", readable_size, size);
-
-  for (size_t i = 0; i < readable_size; i++) {
+  for (size_t i = 0; i < size; i++) {
     buf[i] = reader->buffer.buf[reader->buffer.position + i];
   }
   
   reader->buffer.position += size;
 
-  printf("[reader] buffer position: %zu (capacity: %zu)\n", reader->buffer.position, reader->buffer.capacity);
-  
   return readable_size;
 }
 
