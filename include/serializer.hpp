@@ -14,7 +14,7 @@ class BinarySerializer: public Codec<BinarySerializer> {
   binser_writer_t &writer_;
 
  public:
-  static constexpr bool is_saving = true;
+  static constexpr bool is_saving = true; // 書き込みを行うかどうかのフラグ
 
   BinarySerializer(binser_writer_t& writer): writer_(writer) {}
 

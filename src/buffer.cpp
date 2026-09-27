@@ -4,7 +4,8 @@ namespace binser
 {
 
 BinaryBuffer::BinaryBuffer(uint8_t *data, uint32_t capacity):
-  data_(data), capacity_(capacity), pos_(0) {
+  data_(data), capacity_(capacity), pos_(0)
+{
 
 }
 

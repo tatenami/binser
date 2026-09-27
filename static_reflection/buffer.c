@@ -1,4 +1,4 @@
-#include "c_api/buffer.h"
+#include "buffer.h"
 
 void binser_buffer_init(
   binser_buffer_t *buffer, 
@@ -7,14 +7,6 @@ void binser_buffer_init(
 ) {
   buffer->buf = buf;
   buffer->capacity = capacity;
-  buffer->position = 0;
-}
-
-void binser_buffer_clear(binser_buffer_t *buffer) {
-  for (size_t i = 0; i < buffer->capacity; i++) {
-    buffer->buf[i] = 0x00;
-  }
-
   buffer->position = 0;
 }
 

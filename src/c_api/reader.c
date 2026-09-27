@@ -1,4 +1,4 @@
-#include "c_api/reader.h"
+#include "c_api.h"
 #include <stdio.h>
 
 void binser_reader_init(binser_reader_t *reader, uint8_t *buf, size_t capacity) {

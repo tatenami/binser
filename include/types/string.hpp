@@ -5,12 +5,11 @@
 #include <memory>
 #include "cstring.h"
 
+namespace binser
+{
+
 template <class Codec>
 void codec(Codec& codec, std::string& str) {
-  // for (size_t i = 0; i < str.length(); ++i) {
-  //   codec(str[i]);
-  // }
-
   if constexpr (Codec::is_saving) {
     // 先頭に長さを書き込む (uint32_t)
     uint32_t length = static_cast<uint32_t>(str.length());
@@ -40,6 +39,8 @@ void codec(Codec& codec, CString& cstr) {
   for (size_t i = 0; i < cstr.length; ++i) {
     codec(cstr.data[i]);
   }
+}
+
 }
 
 #endif // STRING_HPP

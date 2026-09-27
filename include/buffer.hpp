@@ -1,4 +1,5 @@
 #include <cstdint>
+
 namespace binser
 {
 

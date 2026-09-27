@@ -9,11 +9,11 @@ typedef struct {
 
 void binser_reader_init(binser_reader_t *reader, uint8_t *buf, size_t capacity);
 void binser_reader_clear(binser_reader_t *reader);
-int binser_read(binser_reader_t *reader, uint8_t *buf, size_t size);
+int  binser_read(binser_reader_t *reader, uint8_t *buf, size_t size);
 
 /* 基本型の読み込み関数 */
-int binser_read_u8(binser_reader_t *reader, uint8_t *value);
-int binser_read_i8(binser_reader_t *reader, int8_t *value);
+int binser_read_u8(binser_reader_t  *reader, uint8_t *value);
+int binser_read_i8(binser_reader_t  *reader, int8_t *value);
 int binser_read_u16(binser_reader_t *reader, uint16_t *value); 
 int binser_read_i16(binser_reader_t *reader, int16_t *value);
 int binser_read_u32(binser_reader_t *reader, uint32_t *value);

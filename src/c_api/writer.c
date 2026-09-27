@@ -1,4 +1,4 @@
-#include "c_api/writer.h"
+#include "c_api.h"
 
 #include <stdio.h>
 
@@ -18,6 +18,8 @@ int binser_write(binser_writer_t *writer, uint8_t *buf, size_t size) {
 
   size_t writable_size = binser_buffer_get_operatable_size(&(writer->buffer));
   if (writable_size < size) {
+    // 書き込み可能サイズが不足している場合はバッファの位置を -1 にする
+    writer->buffer.position = -1;
     return 0;
   }
 

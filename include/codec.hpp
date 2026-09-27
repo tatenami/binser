@@ -9,7 +9,14 @@ class Codec {
   public:
   template <typename... types>
   void operator()(types&... args) {
+    // 畳み込みパック展開
     (derived().process(args), ...);
+    /*
+    (
+      derived().process(arg1),
+      derived().process(arg2),
+    );
+    */
   }
 
   protected:

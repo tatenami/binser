@@ -14,7 +14,7 @@ class BinaryDeserializer: public Codec<BinaryDeserializer> {
   binser_reader_t &reader_;
 
  public:
-  static constexpr bool is_saving = false; 
+  static constexpr bool is_saving = false; // 書き込みを行うかどうかのフラグ
 
   BinaryDeserializer(binser_reader_t& reader): reader_(reader) {}
 

@@ -3,6 +3,9 @@
 
 #include "color.h"
 
+namespace binser
+{
+
 template <class Codec>
 void codec(Codec& codec, ColorRGB& color) {
   codec(color.r, color.g, color.b);
@@ -11,6 +14,8 @@ void codec(Codec& codec, ColorRGB& color) {
 template <class Codec>
 void codec(Codec& codec, ColorRGBA& color) {
   codec(color.r, color.g, color.b, color.a);
+}
+
 }
 
 #endif // COLOR_HPP
