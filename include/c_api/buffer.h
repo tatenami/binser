@@ -17,7 +17,7 @@ void binser_buffer_init(
 );
 
 void binser_buffer_clear(binser_buffer_t *buffer);
-
+void binser_buffer_reset_position(binser_buffer_t *buffer);
 size_t binser_buffer_get_operatable_size(binser_buffer_t *buffer);
 
 #endif // BUFFER_H

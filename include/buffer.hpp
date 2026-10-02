@@ -17,6 +17,8 @@ class BinaryBuffer {
 
   int read(uint8_t *buf, uint32_t size);
   int write(uint8_t *buf, uint32_t size);
+  void clear();
+  void resetPosition();
 };
 
 }

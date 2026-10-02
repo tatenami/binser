@@ -18,6 +18,11 @@ void binser_buffer_clear(binser_buffer_t *buffer) {
   buffer->position = 0;
 }
 
+void binser_buffer_reset_position(binser_buffer_t *buffer) {
+  buffer->position = 0;
+}
+
+
 size_t binser_buffer_get_operatable_size(binser_buffer_t *buffer) {
   return (buffer->capacity - buffer->position);
 }

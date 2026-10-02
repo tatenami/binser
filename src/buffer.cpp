@@ -1,4 +1,5 @@
 #include "buffer.hpp"
+#include <cstdint>
 
 namespace binser
 {
@@ -43,6 +44,16 @@ int BinaryBuffer::write(uint8_t *buf, uint32_t size) {
   }
 
   return writeable_size;
+}
+
+void BinaryBuffer::clear() {
+  for (uint32_t i = 0; i < capacity_; i++) {
+    data_[i] = (uint8_t)(0x00);
+  }
+}
+
+void BinaryBuffer::resetPosition() {
+  pos_ = 0;
 }
 
 }
